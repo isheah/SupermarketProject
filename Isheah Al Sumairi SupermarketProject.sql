@@ -25,12 +25,13 @@ FROM SupermarketProject..SupermarketData
 GROUP BY Payment
 ORDER BY AVG(Rating) DESC
 
---SELECT Product_line, COUNT(Product_line) AS CountProduct, Quantity, AVG(Quantity) AS AVGQuantity
---FROM SupermarketProject..SupermarketData
---GROUP BY Product_line, Quantity
---ORDER BY AVG(Quantity) DESC
 
-
+-- Analyzing data by month, year, hour
+-- Correlation analysis --
+--Regression analysis--
+--hypothesis testing or anova--
+--clearly define everything-- 
+--provide recommendations-- 
 
 
 
