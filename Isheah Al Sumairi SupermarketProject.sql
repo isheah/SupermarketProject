@@ -1,8 +1,23 @@
+-- My Recommendations Based off of Analysis --
+-- Promote use of cash than Ewallet because there is higher gross income with cash than Ewallet --
+-- Promote home and lifestyle products because it is the highest gross income --
+-- Promote more female buyers in Naypitaw because it has the most --
+-- Promote more male buyers in Yangon because it has the most --
+-- Change location of Mandalay because it has the least amount of sales --
+-- Code down below --
+
 SELECT *
 FROM SupermarketProject..SupermarketData
 
 -- Fashion accessories, Food and beverages, Electronic accessories, Sports and travel, Home and lifestyle, Health and beauty --
 SELECT Product_line, COUNT(Product_line)
+FROM SupermarketProject..SupermarketData
+GROUP BY Product_line
+ORDER BY COUNT(Product_line) DESC
+
+-- Product Line by Gross Income --
+  
+SELECT Product_line, COUNT(Product_line), AVG(gross_income) AS GrossIncome
 FROM SupermarketProject..SupermarketData
 GROUP BY Product_line
 ORDER BY COUNT(Product_line) DESC
@@ -64,11 +79,19 @@ FROM SupermarketProject..SupermarketCustomerMembers
 JOIN SupermarketProject..SupermarketData
 ON Genre=gender
 ORDER BY Age ASC
+  
+-- Mean Total and Gross Income Per Day --
+SELECT Total, gross_income, AVG(Total) AS MeanTotal, AVG(gross_income) AS AvgGrossIncome
+FROM SupermarketProject..SupermarketData
+GROUP BY Total, gross_income
 
--- Correlation analysis --
---Regression analysis--
---Add revenue per city--
--- Recommendations Based off of Analysis --
+--  Analysis of City with Least to Most Gross Income -- 
+SELECT City, COUNT(City) AS CountCity, AVG(gross_income) AS GrossIncome
+FROM SupermarketProject..SupermarketData
+GROUP BY City
+ORDER BY AVG(gross_income) ASC
+
+
 
 
 
