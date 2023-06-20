@@ -67,6 +67,7 @@ ORDER BY Age ASC
 
 -- Correlation analysis --
 --Regression analysis--
+--Add revenue per city--
 -- Recommendations Based off of Analysis --
 
 
